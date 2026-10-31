@@ -1,0 +1,497 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Senior Flutter engineer specialising in large-scale Flutter Web. Sole developer on two live products. Cut an enterprise web application's first load from over 20 seconds to under 7.">
+<meta name="author" content="Hammad Rasheed">
+<link rel="canonical" href="https://hammmad.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Hammad Rasheed">
+<meta property="og:title" content="Hammad Rasheed - Senior Flutter Engineer">
+<meta property="og:description" content="Senior Flutter engineer specialising in large-scale Flutter Web. Sole developer on two live products. Cut an enterprise web application's first load from over 20 seconds to under 7.">
+<meta property="og:url" content="https://hammmad.github.io/">
+<meta property="og:image" content="https://hammmad.github.io/headshot.jpg">
+<meta property="og:image:width" content="800">
+<meta property="og:image:height" content="800">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Hammad Rasheed - Senior Flutter Engineer">
+<meta name="twitter:description" content="Senior Flutter engineer specialising in large-scale Flutter Web. Sole developer on two live products. Cut an enterprise web application's first load from over 20 seconds to under 7.">
+<meta name="twitter:image" content="https://hammmad.github.io/headshot.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%230B5FFF'/%3E%3Ctext x='50' y='68' font-family='Helvetica,Arial,sans-serif' font-size='52' font-weight='700' fill='white' text-anchor='middle'%3EHR%3C/text%3E%3C/svg%3E">
+<title>Hammad Rasheed — Flutter Engineering</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Public+Sans:wght@400;500;600&family=Schibsted+Grotesk:wght@500;600;700&display=swap">
+<style>
+  :root{
+    --bg:#FFFFFF;
+    --bg-2:#F2F3F5;
+    --bg-3:#E8EAEE;
+    --ink:#0A0B0D;
+    --ink-2:#4E535C;
+    --ink-3:#848A94;
+    --line:#E1E3E8;
+    --line-2:#C9CDD5;
+    --accent:#0B5FFF;
+    --accent-ink:#FFFFFF;
+    --accent-soft:#E6EEFF;
+    --display:"Schibsted Grotesk","Helvetica Neue",Arial,sans-serif;
+    --body:"Public Sans","Helvetica Neue",Arial,sans-serif;
+    --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0B0C0F;
+      --bg-2:#131519;
+      --bg-3:#1B1E24;
+      --ink:#F2F3F5;
+      --ink-2:#A6ACB6;
+      --ink-3:#777E89;
+      --line:#23262C;
+      --line-2:#333841;
+      --accent:#6E9BFF;
+      --accent-ink:#0B0C0F;
+      --accent-soft:#16233D;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0B0C0F; --bg-2:#131519; --bg-3:#1B1E24;
+    --ink:#F2F3F5; --ink-2:#A6ACB6; --ink-3:#777E89;
+    --line:#23262C; --line-2:#333841;
+    --accent:#6E9BFF; --accent-ink:#0B0C0F; --accent-soft:#16233D;
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);
+    font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{margin:0;font-family:var(--display);font-weight:700;line-height:1.08;
+    letter-spacing:-.025em;text-wrap:balance}
+  p{margin:0}
+  a{color:inherit}
+  *:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+
+  .inner{max-width:1040px;margin:0 auto;padding-inline:28px}
+  .mono{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--ink-3)}
+
+  /* ---------- nav ---------- */
+  nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);
+    backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .nav-in{max-width:1040px;margin:0 auto;padding:13px 28px;display:flex;align-items:center;
+    gap:20px;flex-wrap:wrap}
+  .brand{font-family:var(--display);font-weight:700;font-size:1rem;letter-spacing:-.02em;
+    text-decoration:none;margin-right:auto}
+  .navlinks{display:flex;gap:20px;flex-wrap:wrap}
+  .navlinks a{font-size:.87rem;color:var(--ink-2);text-decoration:none;transition:color .15s}
+  .navlinks a:hover{color:var(--ink)}
+
+  /* ---------- hero ---------- */
+  .hero{padding-block:88px 72px;display:flex;flex-direction:column;gap:26px}
+  .hero-top{display:grid;grid-template-columns:1fr 230px;gap:48px;align-items:center}
+  .hero-text{display:flex;flex-direction:column;gap:24px}
+  .hero-photo img{width:230px;height:230px;border-radius:10px;object-fit:cover;display:block;
+    border:1px solid var(--line)}
+  .chip{display:inline-flex;align-items:center;gap:8px;align-self:flex-start;
+    border:1px solid var(--line-2);border-radius:99px;padding:5px 13px;
+    font-family:var(--mono);font-size:.69rem;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--ink-2)}
+  .dot{width:6px;height:6px;border-radius:99px;background:var(--accent)}
+  .hero h1{font-size:clamp(2.6rem,7.5vw,5rem)}
+  .hero h1 em{font-style:normal;color:var(--accent)}
+  .hero-sub{font-size:clamp(1.05rem,2.3vw,1.28rem);color:var(--ink-2);max-width:54ch;line-height:1.5}
+  .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
+  .btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;
+    font-size:.93rem;font-weight:600;padding:11px 20px;border-radius:5px;
+    border:1px solid var(--line-2);color:var(--ink);transition:background .15s,border-color .15s}
+  .btn:hover{background:var(--bg-2)}
+  .btn.solid{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+  .btn.solid:hover{filter:brightness(1.08);background:var(--accent)}
+  .rolestrip{display:flex;flex-wrap:wrap;gap:8px 26px;margin-top:12px;padding-top:18px;
+    border-top:1px solid var(--line);font-family:var(--mono);font-size:.73rem;
+    color:var(--ink-3);letter-spacing:.03em}
+
+  /* ---------- metrics ---------- */
+  .metrics{border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    background:var(--bg-2)}
+  .metrics-in{max-width:1040px;margin:0 auto;padding:34px 28px;
+    display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+  .metric{display:flex;flex-direction:column;gap:6px}
+  .metric-v{font-family:var(--display);font-weight:700;font-size:clamp(1.7rem,4vw,2.4rem);
+    letter-spacing:-.03em;line-height:1;font-variant-numeric:tabular-nums}
+  .metric-v span{color:var(--accent)}
+  .metric-k{font-size:.87rem;color:var(--ink-2);line-height:1.4}
+
+  /* ---------- sections ---------- */
+  section{padding-block:76px}
+  .sec-head{display:flex;flex-direction:column;gap:11px;margin-bottom:34px;max-width:60ch}
+  .sec-head h2{font-size:clamp(1.7rem,4vw,2.4rem)}
+  .sec-head p{color:var(--ink-2);font-size:1.02rem}
+
+  /* ---------- products ---------- */
+  .products{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .pcard{border:1px solid var(--line);border-radius:8px;background:var(--bg-2);
+    padding:28px;display:flex;flex-direction:column;gap:14px;
+    transition:border-color .15s,transform .15s}
+  .pcard:hover{border-color:var(--accent);transform:translateY(-2px)}
+  .pcard-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+  .pcard h3{font-size:1.45rem}
+  .ptag{font-family:var(--mono);font-size:.63rem;letter-spacing:.09em;text-transform:uppercase;
+    border:1px solid var(--line-2);border-radius:99px;padding:3px 9px;color:var(--ink-3);
+    white-space:nowrap;flex:0 0 auto}
+  .ptag.live{color:var(--accent);border-color:var(--accent)}
+  .pcard p{font-size:.96rem;color:var(--ink-2);line-height:1.6}
+  .plink{margin-top:auto;padding-top:6px;font-family:var(--mono);font-size:.78rem;
+    color:var(--accent);text-decoration:none;display:inline-flex;align-items:center;gap:7px}
+  .plink:hover{text-decoration:underline;text-underline-offset:3px}
+  .pstack{font-family:var(--mono);font-size:.68rem;color:var(--ink-3);letter-spacing:.03em}
+
+  /* ---------- case studies ---------- */
+  .cases{display:flex;flex-direction:column;border-top:1px solid var(--line)}
+  details.case{border-bottom:1px solid var(--line)}
+  details.case > summary{list-style:none;cursor:pointer;padding:22px 0;
+    display:grid;grid-template-columns:1fr auto;gap:18px;align-items:start}
+  details.case > summary::-webkit-details-marker{display:none}
+  .c-main{display:flex;flex-direction:column;gap:7px}
+  .c-main h3{font-size:1.2rem;letter-spacing:-.015em}
+  .c-out{font-size:.95rem;color:var(--ink-2);line-height:1.5}
+  .c-out b{color:var(--accent);font-weight:600}
+  .plus{width:26px;height:26px;border:1px solid var(--line-2);border-radius:99px;
+    display:grid;place-items:center;color:var(--ink-2);font-size:.95rem;line-height:1;
+    flex:0 0 auto;margin-top:3px;transition:transform .2s,border-color .15s}
+  details.case[open] .plus{transform:rotate(45deg);border-color:var(--accent);color:var(--accent)}
+  .c-body{padding:0 0 24px;display:flex;flex-direction:column;gap:13px;max-width:72ch}
+  .c-body p{font-size:.97rem;line-height:1.68;color:var(--ink-2)}
+  .c-body p strong{color:var(--ink)}
+
+  /* ---------- note ---------- */
+  .note{border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 6px 6px 0;
+    background:var(--bg-2);padding:20px 22px;display:flex;flex-direction:column;gap:8px;
+    margin-bottom:30px}
+  .note p{font-size:.95rem;color:var(--ink-2);line-height:1.6}
+
+  /* ---------- capabilities ---------- */
+  .caps{display:grid;grid-template-columns:1fr 1fr;gap:34px}
+  .depth{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .dcard{border:1px solid var(--line);border-radius:8px;padding:24px;
+    display:flex;flex-direction:column;gap:10px;background:var(--bg)}
+  .dcard h3{font-size:1.08rem;letter-spacing:-.01em}
+  .dcard p{font-size:.93rem;color:var(--ink-2);line-height:1.58}
+  .dnum{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;color:var(--accent)}
+  .aiband{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .ai-grid{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:start}
+  .ai-lead{font-size:1.06rem;color:var(--ink);line-height:1.6}
+  .ai-grid p{color:var(--ink-2);font-size:.97rem;line-height:1.65}
+  .ai-col{display:flex;flex-direction:column;gap:13px}
+  .cap{display:flex;flex-direction:column;gap:12px}
+  .cap h3{font-size:1.05rem;letter-spacing:-.01em}
+  .cap ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px}
+  .cap li{font-size:.94rem;color:var(--ink-2);line-height:1.5;padding-left:16px;position:relative}
+  .cap li::before{content:"";position:absolute;left:0;top:.62em;width:5px;height:5px;
+    border-radius:99px;background:var(--line-2)}
+
+  /* ---------- team ---------- */
+  .team{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .team p{font-size:1.02rem;color:var(--ink-2);line-height:1.65;max-width:68ch}
+  .team .stack-p{display:flex;flex-direction:column;gap:14px}
+
+  /* ---------- contact ---------- */
+  .contact{padding-block:84px 96px;display:flex;flex-direction:column;gap:20px}
+  .contact h2{font-size:clamp(1.9rem,5vw,3rem)}
+  .contact-meta{display:flex;flex-wrap:wrap;gap:8px 26px;font-family:var(--mono);
+    font-size:.78rem;color:var(--ink-3)}
+  footer{border-top:1px solid var(--line);padding-block:24px;
+    font-family:var(--mono);font-size:.7rem;color:var(--ink-3);letter-spacing:.05em}
+
+  @media (max-width:760px){
+    body{font-size:16px}
+    .metrics-in{grid-template-columns:1fr;gap:22px}
+    .products,.caps,.depth,.ai-grid{grid-template-columns:1fr}
+    .hero-top{grid-template-columns:1fr;gap:28px}
+    .hero-photo{order:-1}
+    .hero-photo img{width:132px;height:132px}
+    section{padding-block:56px}
+    .hero{padding-block:48px 44px}
+    .navlinks{display:none}
+  }
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+
+<nav>
+  <div class="nav-in">
+    <a class="brand" href="#top">Hammad Rasheed</a>
+    <div class="navlinks">
+      <a href="#products">Products</a>
+      <a href="#work">Work</a>
+      <a href="#depth">Specialisation</a>
+      <a href="#skills">Capabilities</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<div id="top" class="inner">
+  <div class="hero">
+    <div class="hero-top">
+      <div class="hero-text">
+        <span class="chip"><span class="dot"></span> Available — contract or full-time · Remote, UTC+5</span>
+        <h1>I build large Flutter&nbsp;Web applications —<br>and make them <em>fast</em>.</h1>
+        <p class="hero-sub">Seven years in software, four of them owning mobile and web for a multi-product enterprise platform. Sole developer on two live products. My work concentrates on two things: making heavy web applications load quickly, and making the next fifty screens cheaper to build than the last fifty.</p>
+        <div class="cta-row">
+          <a class="btn solid" href="#products">See shipped products</a>
+          <a class="btn" href="mailto:hammmad220@gmail.com">Get in touch</a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <img src="headshot.jpg" alt="Hammad Rasheed" width="230" height="230">
+      </div>
+    </div>
+    <div class="rolestrip">
+      <span>Flutter lead — 7–8 engineers</span>
+      <span>Technical point of contact across 4–5 product teams</span>
+      <span>Owns code review, CI quality gates and release process</span>
+    </div>
+  </div>
+</div>
+
+<div class="metrics">
+  <div class="metrics-in">
+    <div class="metric">
+      <span class="metric-v">20s <span>→</span> 7s</span>
+      <span class="metric-k">First load on an enterprise web platform, after deferred loading and compression</span>
+    </div>
+    <div class="metric">
+      <span class="metric-v">50<span>%</span></span>
+      <span class="metric-k">Less build time per standard screen, via a UI framework I designed</span>
+    </div>
+    <div class="metric">
+      <span class="metric-v">2</span>
+      <span class="metric-k">Live products shipped as sole developer</span>
+    </div>
+  </div>
+</div>
+
+<section id="products" class="inner">
+  <div class="sec-head">
+    <p class="mono">Shipped</p>
+    <h2>Products you can open</h2>
+    <p>Sole developer on both, in Flutter Web.</p>
+  </div>
+  <div class="products">
+    <div class="pcard">
+      <div class="pcard-top">
+        <h3>Genius</h3>
+        <span class="ptag live">Public</span>
+      </div>
+      <p>Helixbeat's developer platform — the API portal where developers discover, test and integrate the company's healthcare APIs, from registration through a testing environment to going live. It also fronts the product family: PULSE for practice management, HelixDoc for scheduling and patient booking, FUSION for FHIR interoperability, and AERIS for data exchange.</p>
+      <p>A public marketing and developer-tooling surface rather than an internal tool, which carries expectations for navigation, responsiveness and polish that an authenticated enterprise app never has to meet.</p>
+      <p class="pstack">Flutter Web · responsive · public-facing</p>
+      <a class="plink" href="https://genius.helixbeat.com/home" target="_blank" rel="noopener">genius.helixbeat.com ↗</a>
+    </div>
+    <div class="pcard">
+      <div class="pcard-top">
+        <h3>AERIS</h3>
+        <span class="ptag">Sign-in required</span>
+      </div>
+      <p>Adaptive Exchange Resource Interoperability System — Helixbeat's healthcare data exchange platform, and one of the four products in the Genius family.</p>
+      <p>An authenticated enterprise application: customer accounts, exchange workflows and the access constraints that come with clinical data moving between organisations. The public URL opens at the customer sign-in screen.</p>
+      <p class="pstack">Flutter Web · authenticated enterprise application</p>
+      <a class="plink" href="https://aeris.helixbeat.com/" target="_blank" rel="noopener">aeris.helixbeat.com ↗</a>
+    </div>
+  </div>
+</section>
+
+<section id="work" class="inner">
+  <div class="sec-head">
+    <p class="mono">Selected work</p>
+    <h2>Engineering on a large enterprise platform</h2>
+    <p>Scheduling, operations, real-time communication and data exchange — built for a US healthcare software company.</p>
+  </div>
+
+  <div class="note">
+    <p class="mono" style="color:var(--accent)">On what's shown</p>
+    <p>This work was built for an employer, so there's no source code, no internal architecture and no client data here — nor should there be. What follows is the engineering described: the problem, the decision, the trade-off, the result. Happy to go deeper in conversation.</p>
+  </div>
+
+  <div class="cases">
+    <details class="case" open>
+      <summary>
+        <div class="c-main">
+          <h3>Cutting first load from over twenty seconds to under seven</h3>
+          <p class="c-out"><b>25 MB build output → 5 MB over the wire</b>, and a clinical app that stopped making staff wait between patients.</p>
+        </div>
+        <span class="plus">+</span>
+      </summary>
+      <div class="c-body">
+        <p>The platform had grown to roughly 25 MB of uncompressed build output. On the connections our users actually had, it took twenty to thirty seconds before anyone could do anything — which, for staff working between patients, is the difference between a tool and an obstacle.</p>
+        <p>I'd built the application, so I knew where the weight was rather than needing to hunt for it: four of the heaviest dependencies were internally developed modules pulled in by git reference, loaded up front even though most users never reached them. Moving them behind deferred imports took the build from <strong>25 MB to 18</strong> — a 28% reduction, and the architectural half of the work.</p>
+        <p>The other finding was that the application was being served with no compression at all. Once configured, transferred size came down to 8 MB with gzip and <strong>5 MB with brotli</strong>, which is what most browsers receive.</p>
+        <p>The trade-off is a brief load the first time a user opens a deferred module, covered by a loading state — a fair exchange for the first-paint cost it removes for everyone, every time.</p>
+      </div>
+    </details>
+
+    <details class="case">
+      <summary>
+        <div class="c-main">
+          <h3>A metadata-driven UI framework — and a boundary around it</h3>
+          <p class="c-out"><b>Half the build time per standard screen</b>, and a UI that stayed consistent as the team grew.</p>
+        </div>
+        <span class="plus">+</span>
+      </summary>
+      <div class="c-body">
+        <p>Enterprise products are mostly the same screens repeated: list, create, edit, view. Ours were being rebuilt by hand each time, slightly differently each time, and the inconsistency compounded across teams.</p>
+        <p>I designed a framework that renders those screens from metadata. A developer declares the endpoint and action, the layout type, and the columns or fields they need; a loader widget takes that description and renders the screen. Pagination, search and accessibility are implemented and tested <strong>once, inside the framework</strong>, so every new screen inherits tested behaviour instead of each developer re-implementing it.</p>
+        <p>The decision I'm most pleased with is what it deliberately does <em>not</em> do. It covers a defined set of screen types and nothing else. Anything outside that drops to a centralised library of generic components and is composed by hand. Scoping it that way is why it stayed useful instead of becoming a system everyone fights.</p>
+        <p>It's also not tightly coupled to one API shape: key mappings have defaults, any action or capability can be overridden, and a service that genuinely needs a different structure gets a second version rather than breaking the framework.</p>
+      </div>
+    </details>
+
+    <details class="case">
+      <summary>
+        <div class="c-main">
+          <h3>Automated quality gates across the organisation's repositories</h3>
+          <p class="c-out"><b>Standards, performance, accessibility and tests enforced in CI</b> — not in people's heads.</p>
+        </div>
+        <span class="plus">+</span>
+      </summary>
+      <div class="c-body">
+        <p>Standards that live in a wiki decay. Standards that live in a pipeline don't. I set up the Bitbucket Pipelines configuration across our repositories so that <strong>coding-standards checks, performance checks, accessibility checks and the Flutter test suite</strong> all run automatically on every change — which means a pull request arrives already filtered, and review time goes to design decisions instead of formatting arguments.</p>
+        <p>Accessibility in CI is the one I'd point at. Most teams treat accessibility as something a designer raises late or nobody raises at all; putting it in the pipeline makes it a build condition rather than an opinion.</p>
+        <p>I also own the release flow on the frontend side: feature branch into dev, tag the dev branch and deploy to a dev environment for testing, then the same feature branch into main, main into release, and a tag to deploy. Our DevOps team runs the deployments; the frontend team owns the releases and what goes into them.</p>
+        <p>It's also the backstop for generated code. A pipeline that fails on standards, performance and accessibility catches a whole class of problem before a human ever reads the diff.</p>
+      </div>
+    </details>
+
+    <details class="case">
+      <summary>
+        <div class="c-main">
+          <h3>A form builder, for users rather than developers</h3>
+          <p class="c-out">Clinical teams compose their own forms; the app renders them at runtime. Built on <b>Bloc</b>.</p>
+        </div>
+        <span class="plus">+</span>
+      </summary>
+      <div class="c-body">
+        <p>Clinical teams need forms nobody can predict in advance — intake questionnaires, assessments, consent flows that differ by practice. Shipping a release for each one was never going to scale.</p>
+        <p>I built a form builder that moves that power to the user: forms are composed visually, with configurable fields and validation rules, and the application renders those user-defined forms at runtime. The same data-defined UI idea as the framework above, aimed one level further out.</p>
+        <p>Built on Bloc rather than the product's older state management, because a widget tree whose shape is determined at runtime needs state transitions you can trace and test. Explicit event-to-state flow earns its boilerplate when the UI itself is dynamic.</p>
+      </div>
+    </details>
+
+    <details class="case">
+      <summary>
+        <div class="c-main">
+          <h3>Also built on the platform</h3>
+          <p class="c-out">Telehealth communication, clinic scheduling, and an embeddable booking widget.</p>
+        </div>
+        <span class="plus">+</span>
+      </summary>
+      <div class="c-body">
+        <p><strong>Telehealth communication.</strong> The platform's real-time layer — chat, audio and video calling on LiveKit, SMS integration and push notifications — inside an application that also has to satisfy constraints on what may be logged and stored. A dropped call during a consultation isn't a bug report; it's a missed appointment.</p>
+        <p><strong>Clinic scheduling.</strong> A calendar that renders overlapping appointments without degrading interaction while a receptionist drags through it with a patient waiting. More a layout and rendering problem than a UI one.</p>
+        <p><strong>Embeddable booking widget.</strong> A reusable Flutter search widget that embeds into clinics' own websites via iframe — treating a Flutter artefact as a guest in someone else's page rather than as the whole application, with the sizing, isolation and load-weight constraints that implies.</p>
+      </div>
+    </details>
+  </div>
+</section>
+
+<section id="depth" class="inner">
+  <div class="sec-head">
+    <p class="mono">Specialisation</p>
+    <h2>Three areas I've gone deepest in</h2>
+    <p>I take general senior Flutter work. These are the three where I've spent the most time.</p>
+  </div>
+  <div class="depth">
+    <div class="dcard">
+      <span class="dnum">01</span>
+      <h3>Flutter Web at enterprise scale</h3>
+      <p>Four years on large Flutter Web in production — bundle and startup optimisation, deferred loading, bookmarkable routing and deep linking, accessibility, and a clear view of where Flutter Web is the wrong choice.</p>
+    </div>
+    <div class="dcard">
+      <span class="dnum">02</span>
+      <h3>Frameworks and quality gates that make teams faster</h3>
+      <p>Designing the layer underneath the product: metadata-driven rendering, shared component libraries, and CI pipelines that enforce standards, performance and accessibility automatically. Built for a team of fifteen; measured at half the build time per standard screen.</p>
+    </div>
+    <div class="dcard">
+      <span class="dnum">03</span>
+      <h3>Compliance-constrained frontends</h3>
+      <p>Four years in a HIPAA and ISO 27001 environment. Audit logging, session isolation on shared terminals, keeping sensitive data out of logs, crash reports and URLs — the constraints that change how you build a client, in healthcare, fintech or anywhere regulated.</p>
+    </div>
+  </div>
+</section>
+
+<div class="aiband">
+  <section class="inner" style="padding-block:64px">
+    <div class="sec-head">
+      <p class="mono">How I work now</p>
+      <h2>AI-assisted code, and the review that has to follow it</h2>
+    </div>
+    <div class="ai-grid">
+      <div class="ai-col">
+        <p class="ai-lead">A great deal of frontend code is now generated. The scarce skill is no longer producing it — it's deciding what survives review.</p>
+        <p>I work with Claude, Cursor and MCP-integrated workflows daily, and so does the team. I review the pull requests of seven to eight engineers, which means I'm the point where generated code either enters the codebase or doesn't. The discipline is the one you'd apply to a capable junior's PR: read every line, check the API exists and isn't deprecated, ask what it does under load, and reject anything the author can't explain.</p>
+      </div>
+      <div class="ai-col">
+        <p>I decline suggestions for three recurring reasons: it builds a generic widget where the codebase needs a reusable one; it solves the problem locally with no regard for reuse; or — the one that matters most — it fixes the reported bug without accounting for the other features depending on that code, so the fix would break something else.</p>
+        <p>That last failure is the argument for the framework work rather than against it. I treat it as three layers: codified patterns and a shared component library constrain what gets generated; a CI pipeline fails the build on standards, performance and accessibility before a human reads the diff; and review catches what neither can. Generated code defaults to solving the problem in front of it — a codebase needs the systemic answer.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<section id="skills" class="inner">
+  <div class="sec-head">
+    <p class="mono">Skills &amp; tools</p>
+    <h2>Capabilities</h2>
+  </div>
+  <div class="caps">
+    <div class="cap">
+      <h3>Flutter &amp; Dart</h3>
+      <ul>
+        <li>Flutter and Dart across web and mobile; cross-platform architecture</li>
+        <li>State management — Bloc, GetX, MVVM</li>
+        <li>SOLID, design patterns and clean architecture applied to Flutter</li>
+        <li>Widget composition, custom framework and design-system design</li>
+        <li>Performance optimisation and profiling; bundle and startup tuning</li>
+        <li>Flutter Web — deferred loading, bookmarkable routing, deep linking, accessibility</li>
+        <li>Java and Kotlin fundamentals</li>
+      </ul>
+    </div>
+    <div class="cap">
+      <h3>Platform, quality &amp; delivery</h3>
+      <ul>
+        <li>REST API integration and third-party SDKs</li>
+        <li>Firebase, Supabase, SQLite</li>
+        <li>Authentication, session and token handling; secure client-side practice</li>
+        <li>LiveKit — real-time chat, audio and video, push notifications, SMS</li>
+        <li>Unit and widget testing</li>
+        <li>CI pipelines — Bitbucket Pipelines running standards, performance, accessibility and test checks</li>
+        <li>Branching and release process; tagged deploys across dev and production environments</li>
+        <li>Code review and engineering standards across a team; production issue triage</li>
+        <li>Native Android background in Java, with apps shipped to Google Play</li>
+        <li>Git, Android Studio, VS Code, Postman, Figma</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="inner">
+  <div id="contact" class="contact" style="border-top:1px solid var(--line)">
+    <p class="mono">Open to work</p>
+    <h2>Senior Flutter roles —<br>contract or full-time, fully remote.</h2>
+    <div class="cta-row">
+      <a class="btn solid" href="mailto:hammmad220@gmail.com">hammmad220@gmail.com</a>
+      <a class="btn" href="https://www.linkedin.com/in/hammmad-rasheed" target="_blank" rel="noopener">LinkedIn ↗</a>
+    </div>
+    <div class="contact-meta">
+      <span>Pakistan · UTC+5</span>
+      <span>Full overlap with European hours</span>
+      <span>Evening overlap with US mornings</span>
+    </div>
+  </div>
+  <footer>Hammad Rasheed — Senior Flutter Engineer</footer>
+</div>
+
+</body>
+</html>
